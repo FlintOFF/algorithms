@@ -7,7 +7,7 @@ module Search
         return index if el == @search_item
       end
 
-      false
+      nil
     end
   end
 end
