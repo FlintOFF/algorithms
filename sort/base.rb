@@ -1,12 +1,11 @@
 # frozen_string_literal: true
 
-module Search
+module Sort
   class Base
     attr_reader :iteration_count
 
-    def initialize(array, search_item)
+    def initialize(array)
       @array = array
-      @search_item = search_item
       @iteration_count = 0
     end
   end

@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 module Search
   class BinarySearch < ::Search::Base
     def call
       start_index = 0
       end_index = @array.length
 
-      while start_index <= end_index do
+      while start_index <= end_index
         @iteration_count += 1
 
         middle_index = ((start_index + end_index) / 2).floor

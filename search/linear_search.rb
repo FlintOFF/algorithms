@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 module Search
   class LinearSearch < ::Search::Base
     def call
