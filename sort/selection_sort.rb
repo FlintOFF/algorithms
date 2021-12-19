@@ -21,14 +21,6 @@ module Sort
 
     private
 
-    def swap(array, from, to)
-      from_value = array[from]
-      to_value = array[to]
-      array[from] = to_value
-      array[to] = from_value
-      array
-    end
-
     def find_min_value(array)
       min_value = array.first
 
