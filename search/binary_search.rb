@@ -3,24 +3,21 @@
 module Search
   class BinarySearch < ::Search::Base
     def call
-      start_index = 0
-      end_index = @array.length
+      search
+    end
 
-      while start_index <= end_index
-        @iteration_count += 1
+    private
 
-        middle_index = ((start_index + end_index) / 2).floor
+    def search(start_index = nil, end_index = nil)
+      @iteration_count += 1
 
-        return middle_index if @array[middle_index] == @search_item
+      start_index ||= 0
+      end_index ||= @array.length
 
-        if @search_item < @array[middle_index]
-          end_index = middle_index - 1
-        else
-          start_index = middle_index + 1
-        end
-      end
+      middle_index = ((start_index + end_index) / 2).floor
+      return middle_index if @array[middle_index] == @search_item
 
-      nil
+      @search_item < @array[middle_index] ? search(start_index, middle_index - 1) : search(middle_index + 1, end_index)
     end
   end
 end
