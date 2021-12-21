@@ -13,3 +13,8 @@ It compering the value with the rest values of the array and swap them if the or
 
 Also has O(n^2) but less effective then 'Selection sort'.
 It compering only two adjacent values and swap them if order is wrong.
+
+### Quick sort
+
+O(log2n*2)
+One of the most effective algorithm of sorting.
