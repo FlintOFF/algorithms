@@ -9,6 +9,8 @@ require_relative 'sort/selection_sort'
 require_relative 'sort/bubble_sort'
 require_relative 'sort/quick_sort'
 
+require_relative 'graph/breadth_first_search'
+
 array = [99, 1, 6, 0, -1, 4, 11, -5, 22, 9]
 search_item = 9
 expected_index = array.index(search_item)
@@ -41,4 +43,18 @@ puts 'Quick sort'
 quick_sort = Sort::QuickSort.new(array)
 puts quick_sort.call == array.sort
 puts quick_sort.iteration_count
+puts ''
+
+puts 'Breadth-first search'
+graph = {
+  a: [:b, :c],
+  b: [:f],
+  c: [:d, :e],
+  d: [:f],
+  e: [:f],
+  f: [:g],
+  h: [:i, :j]
+}
+puts "When the path is exist returns true => #{Graph::BreadthFirstSearch.new(graph, :a, :g).call}"
+puts "When the path is not exist returns false => #{Graph::BreadthFirstSearch.new(graph, :a, :h).call}"
 puts ''
